@@ -1,0 +1,57 @@
+/* ===========================================================
+
+    Molecules - Form Group
+
+    Form group styling
+
+
+	1.
+
+=========================================================== */
+
+.m-form-group {
+    margin-bottom: $un-xs;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.m-form-group__legend {
+    font-weight: 900;
+    margin-bottom: $un-xxxs;
+}
+
+.m-form-group__checkbox {
+    margin-bottom: $un-xxxs;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.m-form-group__radio {
+    margin-bottom: $un-xxxs;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+
+/* ===========================================================
+
+    Molecules - Form Group Modifiers
+
+
+	1.
+
+=========================================================== */
+
+.m-form-field--checkbox {
+
+}
+
+.m-form-field--radio {
+
+}

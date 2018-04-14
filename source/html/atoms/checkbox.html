@@ -1,0 +1,11 @@
+<div class="a-checkbox @class">
+    <input class="a-checkbox__input" id="@id" name="@name" type="checkbox" value="@text">
+    <label class="a-checkbox__label" for="@id">
+        <span class="a-checkbox__box">
+            @include('./atoms/icons/tick.html', {
+                "class": "a-checkbox__icon"
+            })
+        </span>
+        @text
+    </label>
+</div>

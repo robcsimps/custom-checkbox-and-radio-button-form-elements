@@ -1,0 +1,33 @@
+/* ===========================================================
+
+    Atoms - Icons
+
+    Global icon styling used throughout the site
+
+
+	1.
+
+=========================================================== */
+
+.a-icon {
+    color: $co-dark-1;
+    vertical-align: top;
+}
+
+
+/* ===========================================================
+
+    Atoms - Icon Modifiers
+
+
+	1.
+
+=========================================================== */
+
+.a-icon--stroke {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: butt; /* butt, round, square */
+    stroke-linejoin: miter; /* bevel, miter, round */
+    stroke-width: 2;
+}

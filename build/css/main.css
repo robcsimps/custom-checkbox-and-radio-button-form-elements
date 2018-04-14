@@ -1,0 +1,372 @@
+/* ===========================================================
+
+	Tools - Breakpoint
+	
+	Global website breakpoint mixins and functions
+
+    
+    1. High resolution device media query - http://davidtheclark.github.io/scut/#hd_breakpoint
+    
+=========================================================== */
+/* ===========================================================
+
+	Tools - Utilities
+
+	Global website utility mixins and functions
+
+
+    1. Convert pixels to em (font-size: em(14px); // 0.875em)
+    2. Convert pixels to rem (font-size: rem(14px); // 0.875rem)
+	3. Aspect ratio container
+	4. Clear floats within container when overflow:hidden is undesirable
+    5. Hiding visually (keep accessibility) - http://h5bp.com/v -http://davidtheclark.github.io/scut/#hide_visually
+	6. Adds focus outline to elements
+
+=========================================================== */
+/* ===========================================================
+
+	Settings - Breakpoint
+	
+	Global website breakpoint variables
+
+    
+    1.
+    
+=========================================================== */
+/* ===========================================================
+
+	Settings - Color
+
+	Global website color variables
+
+
+    1.
+
+=========================================================== */
+/* ===========================================================
+
+	Settings - Unit
+
+	Global website unit variables
+
+
+    1.
+
+=========================================================== */
+/* ===========================================================
+
+	Settings - Utilities
+	
+	Global website utility variables
+
+    
+    1.
+    
+=========================================================== */
+/* ===========================================================
+
+	Settings - Reset
+
+	Global styling reset
+
+
+	1. http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+
+=========================================================== */
+@-ms-viewport {
+  width: device-width; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strike, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, main,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  color: inherit;
+  font: inherit; }
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased; }
+  html ::-moz-selection {
+    background: #31cc89; }
+  html ::selection {
+    background: #31cc89; }
+
+body {
+  background: #f9f9f9;
+  color: #3e3e3e;
+  font-family: "Playfair Display", times; }
+
+* {
+  box-sizing: border-box; }
+
+img {
+  display: block;
+  max-width: 100%; }
+
+/* ===========================================================
+
+	Settings - Layout
+
+	Global website layout
+
+
+    1.
+
+=========================================================== */
+.l-container {
+  margin-left: auto;
+  margin: auto;
+  max-width: 1480px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem; }
+  @media screen and (min-width: 48em) {
+    .l-container {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem; } }
+  @media screen and (min-width: 80em) {
+    .l-container {
+      padding-left: 3.75rem;
+      padding-right: 3.75rem; } }
+  @media screen and (min-width: 87.5em) {
+    .l-container {
+      padding-left: 6.25rem;
+      padding-right: 6.25rem; } }
+
+/* ===========================================================
+
+    Atoms - Checkbox
+
+    Global checkbox styling used throughout the site
+
+
+    1. If the browser cuts the mustard hide the default input element
+    2. If the browser cuts the mustard show the custom checkbox and style it up
+
+=========================================================== */
+.a-checkbox__input {
+  float: left;
+  margin: 0 0.625rem 0 0;
+  width: auto; }
+  @supports (transition: stroke-dashoffset) {
+    .a-checkbox__input {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px; } }
+
+.a-checkbox__label {
+  display: inline-block; }
+
+.a-checkbox__box {
+  display: none; }
+  @supports (transition: stroke-dashoffset) {
+    .a-checkbox__box {
+      border: 0.125rem solid #dcdcdc;
+      display: inline-block;
+      height: 1.875rem;
+      margin-right: 0.625rem;
+      position: relative;
+      transition: border-color 0.3s cubic-bezier(0.5, 0.61, 0.355, 1), box-shadow 0.3s cubic-bezier(0.5, 0.61, 0.355, 1);
+      vertical-align: middle;
+      width: 1.875rem; } }
+
+.a-checkbox__icon {
+  height: 1rem;
+  left: 50%;
+  position: absolute;
+  stroke-dasharray: 22;
+  stroke-dashoffset: 22;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transition: stroke-dashoffset 0.3s cubic-bezier(0.5, 0.61, 0.355, 1);
+  width: 1rem; }
+
+/* ===========================================================
+
+    Atoms - Checkbox Modifiers
+
+
+    1. Checked state
+    2. Focus state
+
+=========================================================== */
+.a-checkbox__input:checked + .a-checkbox__label .a-checkbox__icon {
+  stroke-dashoffset: 0; }
+
+.a-checkbox__input:focus + .a-checkbox__label .a-checkbox__box {
+  box-shadow: 0 0 0 0.25rem rgba(49, 204, 137, 0.5);
+  outline: none;
+  border-color: #31cc89; }
+
+/* ===========================================================
+
+    Atoms - Icons
+
+    Global icon styling used throughout the site
+
+
+	1.
+
+=========================================================== */
+.a-icon {
+  color: #000000;
+  vertical-align: top; }
+
+/* ===========================================================
+
+    Atoms - Icon Modifiers
+
+
+	1.
+
+=========================================================== */
+.a-icon--stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: butt;
+  /* butt, round, square */
+  stroke-linejoin: miter;
+  /* bevel, miter, round */
+  stroke-width: 2; }
+
+/* ===========================================================
+
+    Atoms - Radio
+
+    Global radio styling used throughout the site
+
+
+    1. If the browser cuts the mustard hide the default input element
+    2. If the browser cuts the mustard show the custom radio and style it up
+
+=========================================================== */
+.a-radio__input {
+  float: left;
+  margin: 0 0.625rem 0 0;
+  width: auto; }
+  @supports (transition: stroke-dashoffset) {
+    .a-radio__input {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px; } }
+
+.a-radio__label {
+  display: inline-block; }
+
+.a-radio__box {
+  display: none; }
+  @supports (transition: stroke-dashoffset) {
+    .a-radio__box {
+      border: 0.125rem solid #dcdcdc;
+      border-radius: 100%;
+      display: inline-block;
+      height: 1.875rem;
+      margin-right: 0.625rem;
+      position: relative;
+      transition: border-color 0.3s cubic-bezier(0.5, 0.61, 0.355, 1), box-shadow 0.3s cubic-bezier(0.5, 0.61, 0.355, 1);
+      vertical-align: middle;
+      width: 1.875rem; } }
+
+.a-radio__icon {
+  background-color: currentColor;
+  border-radius: 100%;
+  height: 0.875rem;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transition: opacity 0.3s cubic-bezier(0.5, 0.61, 0.355, 1);
+  width: 0.875rem; }
+
+/* ===========================================================
+
+    Atoms - Radio Modifiers
+
+
+    1. Checked state
+    2. Focus state
+
+=========================================================== */
+.a-radio__input:checked + .a-radio__label .a-radio__icon {
+  opacity: 1; }
+
+.a-radio__input:focus + .a-radio__label .a-radio__box {
+  box-shadow: 0 0 0 0.25rem rgba(49, 204, 137, 0.5);
+  outline: none;
+  border-color: #31cc89; }
+
+/* ===========================================================
+
+    Molecules - Form Group
+
+    Form group styling
+
+
+	1.
+
+=========================================================== */
+.m-form-group {
+  margin-bottom: 1.25rem; }
+  .m-form-group:last-of-type {
+    margin-bottom: 0; }
+
+.m-form-group__legend {
+  font-weight: 900;
+  margin-bottom: 0.625rem; }
+
+.m-form-group__checkbox {
+  margin-bottom: 0.625rem; }
+  .m-form-group__checkbox:last-of-type {
+    margin-bottom: 0; }
+
+.m-form-group__radio {
+  margin-bottom: 0.625rem; }
+  .m-form-group__radio:last-of-type {
+    margin-bottom: 0; }
+
+/* ===========================================================
+
+    Molecules - Form Group Modifiers
+
+
+	1.
+
+=========================================================== */

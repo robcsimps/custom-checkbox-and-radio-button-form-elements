@@ -1,0 +1,84 @@
+/* ===========================================================
+
+    Atoms - Checkbox
+
+    Global checkbox styling used throughout the site
+
+
+    1. If the browser cuts the mustard hide the default input element
+    2. If the browser cuts the mustard show the custom checkbox and style it up
+
+=========================================================== */
+
+.a-checkbox {
+
+}
+
+.a-checkbox__input {
+    float: left;
+    margin: 0 $un-xxxs 0 0;
+    width: auto;
+
+    // 1
+    @supports (transition: stroke-dashoffset) {
+        @include visually-hidden();
+    }
+}
+
+.a-checkbox__label {
+    display: inline-block;
+}
+
+.a-checkbox__box {
+    display: none;
+
+    // 2
+    @supports (transition: stroke-dashoffset) {
+        border: rem(2px) solid $co-grey-2;
+        display: inline-block;
+        height: $un-sm;
+        margin-right: $un-xxxs;
+        position: relative;
+        transition: border-color $ut-speed $ut-timing-func-1, box-shadow $ut-speed $ut-timing-func-1;
+        vertical-align: middle;
+        width: $un-sm;
+    }
+}
+
+.a-checkbox__icon {
+    height: rem(16px);
+    left: 50%;
+    position: absolute;
+    stroke-dasharray: 22;
+    stroke-dashoffset: 22;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: stroke-dashoffset $ut-speed $ut-timing-func-1;
+    width: rem(16px);
+}
+
+
+/* ===========================================================
+
+    Atoms - Checkbox Modifiers
+
+
+    1. Checked state
+    2. Focus state
+
+=========================================================== */
+
+// 1
+.a-checkbox__input:checked + .a-checkbox__label {
+    .a-checkbox__icon {
+        stroke-dashoffset: 0;
+    }
+}
+
+// 2
+.a-checkbox__input:focus + .a-checkbox__label {
+    .a-checkbox__box {
+        @include focus-outline();
+        border-color: $co-primary;
+    }
+}

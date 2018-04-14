@@ -1,0 +1,17 @@
+<fieldset class="m-form-group m-form-group--checkbox @class">
+    <legend class="m-form-group__legend">@legend</legend>
+
+    @loop("./atoms/checkbox.html", [
+        {
+            "class": "m-form-group__checkbox",
+            "id": "checkbox-1",
+            "name": "checkbox-1",
+            "text": "Label"
+        }, {
+            "class": "m-form-group__checkbox",
+            "id": "label-2",
+            "name": "checkbox-2",
+            "text": "Label"
+        }
+    ])
+</fieldset>
