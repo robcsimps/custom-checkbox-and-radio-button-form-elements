@@ -50,6 +50,7 @@ textarea {
 }
 
 html {
+	height: 100%;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
@@ -64,9 +65,22 @@ html {
 }
 
 body {
+	align-content: center;
 	background: $co-body-background;
 	color: $co-body-text;
+	display: flex;
 	font-family: "Playfair Display", times;
+	font-size: 20px;
+	height: 100%;
+	justify-content: center;
+
+	@include respond-min($bp-sm) {
+		font-size: 30px;
+	}
+
+	@include respond-min($bp-md) {
+		font-size: 40px;
+	}
 }
 
 * {

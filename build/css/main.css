@@ -113,6 +113,7 @@ textarea {
 }
 
 html {
+	height: 100%;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
@@ -127,9 +128,29 @@ html ::selection {
 }
 
 body {
+	-webkit-align-content: center;
+	        align-content: center;
 	background: #f9f9f9;
 	color: #3e3e3e;
+	display: -webkit-flex;
+	display: flex;
 	font-family: "Playfair Display", times;
+	font-size: 20px;
+	height: 100%;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+
+@media screen and (min-width: 32em) {
+	body {
+		font-size: 30px;
+	}
+}
+
+@media screen and (min-width: 48em) {
+	body {
+		font-size: 40px;
+	}
 }
 
 * {
@@ -155,28 +176,28 @@ img {
 	margin-left: auto;
 	margin: auto;
 	max-width: 1480px;
-	padding-left: 1.25rem;
-	padding-right: 1.25rem;
+	padding-left: 1.25em;
+	padding-right: 1.25em;
 }
 
 @media screen and (min-width: 48em) {
 	.l-container {
-		padding-left: 2.5rem;
-		padding-right: 2.5rem;
+		padding-left: 2.5em;
+		padding-right: 2.5em;
 	}
 }
 
 @media screen and (min-width: 80em) {
 	.l-container {
-		padding-left: 3.75rem;
-		padding-right: 3.75rem;
+		padding-left: 3.75em;
+		padding-right: 3.75em;
 	}
 }
 
 @media screen and (min-width: 87.5em) {
 	.l-container {
-		padding-left: 6.25rem;
-		padding-right: 6.25rem;
+		padding-left: 6.25em;
+		padding-right: 6.25em;
 	}
 }
 
@@ -189,11 +210,12 @@ img {
 
     1. If the browser cuts the mustard hide the default input element
     2. If the browser cuts the mustard show the custom checkbox and style it up
+    3. If the browser cuts the mustard style the checkbox icon 
 
 =========================================================== */
 .a-checkbox__input {
 	float: left;
-	margin: 0 0.625rem 0 0;
+	margin: 0 0.625em 0 0;
 	width: auto;
 }
 
@@ -220,28 +242,30 @@ img {
 
 @supports (transition: stroke-dashoffset) {
 	.a-checkbox__box {
-		border: 0.125rem solid #dcdcdc;
+		border: 0.125em solid #dcdcdc;
 		display: inline-block;
-		height: 1.875rem;
-		margin-right: 0.625rem;
+		height: 1.875em;
+		margin-right: 0.625em;
 		position: relative;
 		transition: border-color 0.3s cubic-bezier(0.5, 0.61, 0.355, 1), box-shadow 0.3s cubic-bezier(0.5, 0.61, 0.355, 1);
 		vertical-align: middle;
-		width: 1.875rem;
+		width: 1.875em;
 	}
 }
 
-.a-checkbox__icon {
-	height: 1rem;
-	left: 50%;
-	position: absolute;
-	stroke-dasharray: 22;
-	stroke-dashoffset: 22;
-	top: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
-	transition: stroke-dashoffset 0.3s cubic-bezier(0.5, 0.61, 0.355, 1);
-	width: 1rem;
+@supports (transition: stroke-dashoffset) {
+	.a-checkbox__icon {
+		height: 1em;
+		left: 50%;
+		position: absolute;
+		stroke-dasharray: 22;
+		stroke-dashoffset: 22;
+		top: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
+		transition: stroke-dashoffset 0.3s cubic-bezier(0.5, 0.61, 0.355, 1);
+		width: 1em;
+	}
 }
 
 /* ===========================================================
@@ -253,14 +277,18 @@ img {
     2. Focus state
 
 =========================================================== */
-.a-checkbox__input:checked + .a-checkbox__label .a-checkbox__icon {
-	stroke-dashoffset: 0;
+@supports (transition: stroke-dashoffset) {
+	.a-checkbox__input:checked + .a-checkbox__label .a-checkbox__icon {
+		stroke-dashoffset: 0;
+	}
 }
 
-.a-checkbox__input:focus + .a-checkbox__label .a-checkbox__box {
-	box-shadow: 0 0 0 0.25rem rgba(49, 204, 137, 0.5);
-	outline: none;
-	border-color: #31cc89;
+@supports (transition: stroke-dashoffset) {
+	.a-checkbox__input:focus + .a-checkbox__label .a-checkbox__box {
+		box-shadow: 0 0 0 0.25em rgba(49, 204, 137, 0.5);
+		outline: none;
+		border-color: #31cc89;
+	}
 }
 
 /* ===========================================================
@@ -305,11 +333,12 @@ img {
 
     1. If the browser cuts the mustard hide the default input element
     2. If the browser cuts the mustard show the custom radio and style it up
+    3. If the browser cuts the mustard style the radio icon 
 
 =========================================================== */
 .a-radio__input {
 	float: left;
-	margin: 0 0.625rem 0 0;
+	margin: 0 0.625em 0 0;
 	width: auto;
 }
 
@@ -336,30 +365,32 @@ img {
 
 @supports (transition: stroke-dashoffset) {
 	.a-radio__box {
-		border: 0.125rem solid #dcdcdc;
+		border: 0.125em solid #dcdcdc;
 		border-radius: 100%;
 		display: inline-block;
-		height: 1.875rem;
-		margin-right: 0.625rem;
+		height: 1.875em;
+		margin-right: 0.625em;
 		position: relative;
 		transition: border-color 0.3s cubic-bezier(0.5, 0.61, 0.355, 1), box-shadow 0.3s cubic-bezier(0.5, 0.61, 0.355, 1);
 		vertical-align: middle;
-		width: 1.875rem;
+		width: 1.875em;
 	}
 }
 
-.a-radio__icon {
-	background-color: currentColor;
-	border-radius: 100%;
-	height: 0.875rem;
-	left: 50%;
-	opacity: 0;
-	position: absolute;
-	top: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
-	transition: opacity 0.3s cubic-bezier(0.5, 0.61, 0.355, 1);
-	width: 0.875rem;
+@supports (transition: stroke-dashoffset) {
+	.a-radio__icon {
+		background-color: #000000;
+		border-radius: 100%;
+		height: 0.875em;
+		left: 50%;
+		opacity: 0;
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
+		transition: opacity 0.3s cubic-bezier(0.5, 0.61, 0.355, 1);
+		width: 0.875em;
+	}
 }
 
 /* ===========================================================
@@ -371,14 +402,18 @@ img {
     2. Focus state
 
 =========================================================== */
-.a-radio__input:checked + .a-radio__label .a-radio__icon {
-	opacity: 1;
+@supports (transition: stroke-dashoffset) {
+	.a-radio__input:checked + .a-radio__label .a-radio__icon {
+		opacity: 1;
+	}
 }
 
-.a-radio__input:focus + .a-radio__label .a-radio__box {
-	box-shadow: 0 0 0 0.25rem rgba(49, 204, 137, 0.5);
-	outline: none;
-	border-color: #31cc89;
+@supports (transition: stroke-dashoffset) {
+	.a-radio__input:focus + .a-radio__label .a-radio__box {
+		box-shadow: 0 0 0 0.25em rgba(49, 204, 137, 0.5);
+		outline: none;
+		border-color: #31cc89;
+	}
 }
 
 /* ===========================================================
@@ -392,7 +427,7 @@ img {
 
 =========================================================== */
 .m-form-group {
-	margin-bottom: 1.25rem;
+	margin-bottom: 1.875em;
 }
 
 .m-form-group:last-of-type {
@@ -400,12 +435,13 @@ img {
 }
 
 .m-form-group__legend {
+	color: #000000;
 	font-weight: 900;
-	margin-bottom: 0.625rem;
+	margin-bottom: 0.9375em;
 }
 
 .m-form-group__checkbox {
-	margin-bottom: 0.625rem;
+	margin-bottom: 0.9375em;
 }
 
 .m-form-group__checkbox:last-of-type {
@@ -413,7 +449,7 @@ img {
 }
 
 .m-form-group__radio {
-	margin-bottom: 0.625rem;
+	margin-bottom: 0.625em;
 }
 
 .m-form-group__radio:last-of-type {

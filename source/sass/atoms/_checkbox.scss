@@ -7,6 +7,7 @@
 
     1. If the browser cuts the mustard hide the default input element
     2. If the browser cuts the mustard show the custom checkbox and style it up
+    3. If the browser cuts the mustard style the checkbox icon 
 
 =========================================================== */
 
@@ -34,7 +35,7 @@
 
     // 2
     @supports (transition: stroke-dashoffset) {
-        border: rem(2px) solid $co-grey-2;
+        border: em(2px) solid $co-grey-2;
         display: inline-block;
         height: $un-sm;
         margin-right: $un-xxxs;
@@ -46,15 +47,18 @@
 }
 
 .a-checkbox__icon {
-    height: rem(16px);
-    left: 50%;
-    position: absolute;
-    stroke-dasharray: 22;
-    stroke-dashoffset: 22;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    transition: stroke-dashoffset $ut-speed $ut-timing-func-1;
-    width: rem(16px);
+    // 3
+    @supports (transition: stroke-dashoffset) {
+        height: em(16px);
+        left: 50%;
+        position: absolute;
+        stroke-dasharray: 22;
+        stroke-dashoffset: 22;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        transition: stroke-dashoffset $ut-speed $ut-timing-func-1;
+        width: em(16px);
+    }
 }
 
 
@@ -71,14 +75,18 @@
 // 1
 .a-checkbox__input:checked + .a-checkbox__label {
     .a-checkbox__icon {
-        stroke-dashoffset: 0;
+        @supports (transition: stroke-dashoffset) {
+            stroke-dashoffset: 0;
+        }
     }
 }
 
 // 2
 .a-checkbox__input:focus + .a-checkbox__label {
     .a-checkbox__box {
-        @include focus-outline();
-        border-color: $co-primary;
+        @supports (transition: stroke-dashoffset) {
+            @include focus-outline();
+            border-color: $co-primary;
+        }
     }
 }

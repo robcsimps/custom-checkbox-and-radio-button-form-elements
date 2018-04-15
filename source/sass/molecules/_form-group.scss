@@ -10,7 +10,7 @@
 =========================================================== */
 
 .m-form-group {
-    margin-bottom: $un-xs;
+    margin-bottom: $un-sm;
 
     &:last-of-type {
         margin-bottom: 0;
@@ -18,12 +18,13 @@
 }
 
 .m-form-group__legend {
+    color: $co-dark-1;
     font-weight: 900;
-    margin-bottom: $un-xxxs;
+    margin-bottom: $un-xxs;
 }
 
 .m-form-group__checkbox {
-    margin-bottom: $un-xxxs;
+    margin-bottom: $un-xxs;
 
     &:last-of-type {
         margin-bottom: 0;
