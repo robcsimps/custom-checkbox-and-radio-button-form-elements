@@ -1,6 +1,6 @@
-# Rob Simpson - Resource Boilerplate
+# Custom checkbox and radio button form elements
 
-> Basic atomic design boilerplate to kickstart new front-end resource projects for [https://www.robsimpson.me](https://www.robsimpson.me)
+> Create some great looking progressively enhanced custom checkboxes and radio button form elements using HTML, CSS and inline SVG. [https://www.robsimpson.me/tutorials/custom-checkbox-and-radio-button-form-elements/](https://www.robsimpson.me/tutorials/custom-checkbox-and-radio-button-form-elements/)
 
 ## Getting Started
 
